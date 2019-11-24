@@ -2,15 +2,13 @@ db.createCollection("candidaturaCtesp", {
    validator: {
       $jsonSchema: {
          bsonType: "object",
-         required: [ "curso","nome","sexo","cc","morada","contactos","nif","niss","numero_aluno"],
+         required: [ "curso","nome","sexo","cc","morada","contactos","nif","niss","numeroAluno"],
          properties: {
             curso: {
                bsonType: "string",
-               description: "Nome Completo do curso"
             },
             nome: {
                bsonType: "string",
-               description: "Nome complelto do aluno"
             },
             sexo: {
                enum: [ "Masculino", "Feminino"],
@@ -63,10 +61,14 @@ db.createCollection("candidaturaCtesp", {
             niss:{
                bsonType:"int"
             },
-            numero_aluno:{
+            numeroAluno:{
                bsonType:"int"
             }
          }
       }
    }
 })
+
+
+
+db.candidaturaCtesp.createIndex( { "numeroAluno": 1 }, { unique: true } )

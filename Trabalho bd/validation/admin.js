@@ -15,5 +15,5 @@ db.createCollection("admin", {
     }
  })
 
- db.admin.createIndex( { "user": 1 }, { unique: true } )
+db.admin.createIndex( { "user": 1 }, { unique: true } )
 //atribuir o campo user como unico

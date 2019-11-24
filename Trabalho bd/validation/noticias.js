@@ -2,7 +2,7 @@ db.createCollection("newsFeed", {
     validator: {
        $jsonSchema: {
           bsonType: "object",
-          required: ["nome","telemovel","cc","morada","contactos","nif","niss","numero_aluno"],
+          required: ["titulo","data","text"],
           properties: {
             titulo:{
                 bsonType:"string"
@@ -16,4 +16,4 @@ db.createCollection("newsFeed", {
           }
        }
     }
- })
+ });
